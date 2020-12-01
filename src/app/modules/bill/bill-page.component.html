@@ -1,0 +1,216 @@
+
+        <!-- <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-white">
+              <li class="mr-auto" style="font-size: 20px;">Make Bill</li>
+              <li class="breadcrumb-item active"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <span><a href="#">Table and Order</a></span>
+              </li>
+            </ol>
+          </nav> -->
+        <mat-toolbar class="page-header" role="heading">
+          <h1>Make Bill</h1>
+          <!-- <button mat-flat-button>
+              <span><mat-icon>add</mat-icon></span> Add New Menu
+            </button> -->
+      
+      
+        </mat-toolbar>
+      
+      
+        <!-- <mat-toolbar class="page-header" role="heading">
+              <h1>Typography</h1>
+            </mat-toolbar> -->
+      
+        <mat-card-content class="typography-content">
+          <div class="typography-content__wrapper">
+      
+            <mat-card class="typography-content__item-wrapper">
+              <mat-card-title>
+                <p>Tables</p>
+              </mat-card-title>
+              <!---->
+              <mat-tab-group>
+                <mat-tab label="1st floor">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul class="list">
+                        <li>
+                          <a routerLink="fromEvent">(1) fromEvent()</a>
+                        </li>
+                        <li>
+                          <a routerLink="interval">(2) interval() and (3) timer()</a>
+                        </li>
+                        <li>
+                          <a routerLink="of-from">(4) of() and (5) from()</a>
+                        </li>
+                        <li>
+                          <a routerLink="to-array">(6) toArray()</a>
+                        </li>
+                        <li>
+                          <a routerLink="custom-observable">Custom Observable</a>
+                        </li>
+                        <li>
+                          <a routerLink="map">(7) map()</a>
+                        </li>
+                        <li>
+                          <a routerLink="pluck">(8) pluck()</a>
+                        </li>
+                        <li>
+                          <a routerLink="filter">(9) filter()</a>
+                        </li>
+                        <li>
+                          <a routerLink="tap">(10) tap()</a>
+                        </li>
+                        <li>
+                          <a routerLink="take">(11) take() (12) takeLast() <br>(13) takeUntil()</a>
+                        </li>
+                        <li>
+                          <a routerLink="retry">(14) retry() (15) retryWhen() <br>(16) scan() (17) delay()</a>
+                        </li>
+                        <li>
+                          <a routerLink="debouncetime">(18) debounceTime() <br>(19) distinctUntilChanged()</a>
+                        </li>
+                        <li>
+                          <a routerLink="subject">(20) Subject() <br>(21) BehaviorSubject()</a>
+                        </li>
+                        <li>
+                          <a routerLink="replay-subject">(22) ReplaySubject()</a>
+                        </li>
+                        <li>
+                          <a routerLink="async-subject">(23) AsyncSubject()</a>
+                        </li>
+                        <li>
+                          <a routerLink="concat">(24) concat()</a>
+                        </li>
+                        <li>
+                          <a routerLink="merge">(25) merge()</a>
+                        </li>
+                        <li>
+                          <a routerLink="mergemap">(26) mergeMap()</a>
+                        </li>
+                        <li>
+                          <a routerLink="concatmap">(27) concatMap()</a>
+                        </li>
+                        <li>
+                          <a routerLink="concatmap-mobile-notification-example">(27) concatMap() -
+                            <br>mobile-notification-example</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </mat-tab>
+      
+      
+      
+      
+                <mat-tab label="2nd floor">
+                  <p>Put tables here</p>
+                </mat-tab>
+                <mat-tab label="3rd floor">
+                  <p>Put tables here</p>
+                </mat-tab>
+              </mat-tab-group>
+              <!---->
+      
+      
+              <!---->
+      
+              <!---->
+      
+            </mat-card>
+      
+            <mat-card class="typography-content__item-wrapper">
+              <mat-card-title>
+                <p>Bill</p>
+              </mat-card-title>
+              <!---->
+              <mat-table [dataSource]="dataSource">
+      
+                <!-- Columns -->
+                <ng-container matColumnDef="player">
+                  <mat-header-cell *matHeaderCellDef> Player </mat-header-cell>
+                  <mat-cell *matCellDef="let player"> {{ player.name }}</mat-cell>
+                  <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+      
+                <ng-container matColumnDef="team">
+                  <mat-header-cell *matHeaderCellDef> Team </mat-header-cell>
+                  <mat-cell *matCellDef="let player"> {{ player.team }}</mat-cell>
+                  <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+      
+                <ng-container matColumnDef="goals">
+                  <mat-header-cell class="right-align" *matHeaderCellDef> Goals </mat-header-cell>
+                  <mat-cell class="right-align" *matCellDef="let player"> {{ player.goals }}</mat-cell>
+                  <mat-footer-cell *matFooterCellDef> Total: {{ calculateTotal() }}</mat-footer-cell>
+                </ng-container>
+      
+                <!-- Rows -->
+                <mat-header-row class="sticky-header" *matHeaderRowDef="['player', 'team', 'goals']"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: ['player', 'team', 'goals']"></mat-row>
+                <mat-footer-row class="sticky-footer" *matFooterRowDef="['player', 'team', 'goals']"></mat-footer-row>
+      
+              </mat-table>
+              <!---->
+      
+      
+      
+      
+              <div class="">
+                <!-- <h3 class="typography-content__colors_pink">Table Number : 1</h3>
+                    <h4 class="typography-content__colors_yellow">Orders</h4>
+                    <h6 class="typography-content">Biryani (2)  676</h6>
+                    <h6 class="typography-content">Dal Tadka (1)</h6>
+                    <h6 class="typography-content">Biryani (2)</h6>
+                    <h6 class="typography-content">Dal Tadka (1)</h6>
+                    <h6 class="typography-content">Biryani (2)</h6>
+                    <h6 class="typography-content">Dal Tadka (1)</h6>
+                    <h6 class="typography-content">Biryani (2)</h6>
+                    <h6 class="typography-content">Dal Tadka (1)</h6> -->
+      
+      
+                <!-- <h1 class="typography-content__colors_blue">h1. Heading</h1>
+                    <h2 class="typography-content__colors_green">h2. Heading</h2>
+                    <h3 class="typography-content__colors_pink">h3. Heading</h3>
+                    <h4 class="typography-content__colors_yellow">h4. Heading</h4>
+                    <h5 class="typography-content__colors_light-blue">h5. Heading</h5>
+                    <h6 class="typography-content__colors_violet">h6. Heading</h6> -->
+              </div>
+            </mat-card>
+      
+          </div>
+          <div class="typography-content__wrapper">
+            <mat-card class="typography-content__item-wrapper">
+              <mat-card-title>
+                <p>Basic Text Settings</p>
+              </mat-card-title>
+              <div class="typography-content__settings">
+                <p>Basic text</p>
+                <p class="fw-light">Basic light text</p>
+                <p class="fw-medium">Basic medium text</p>
+                <p class="fw-bold">Basic bold text</p>
+                <p class="font-uppercase">basic lowercase text</p>
+                <p class="font-lowercase">basic lowercase text</p>
+                <p>Basic Capitalized Text</p>
+                <p class="fst-italic">Basic Cursive Text</p>
+              </div>
+            </mat-card>
+            <mat-card class="typography-content__item-wrapper">
+              <mat-card-title>
+                <p>Text Size</p>
+              </mat-card-title>
+              <div class="typography-content__size">
+                <p class="fs-sm">Heading Typography SM Font Size</p>
+                <p class="fs-regular">Heading Typography Regular Font Size</p>
+                <p class="fs-md">Heading Typography MD Font Size</p>
+                <p class="fs-xl">Heading Typography XL Font Size</p>
+                <p class="fs-xxl"> Heading Typography XXL Font Size</p>
+              </div>
+            </mat-card>
+          </div>
+        </mat-card-content>
+      
+        <!-- <app-footer></app-footer> -->
+        <!-- <app-hotel-footer></app-hotel-footer> -->
+     

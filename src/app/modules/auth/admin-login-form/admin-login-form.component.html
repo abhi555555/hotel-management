@@ -1,0 +1,36 @@
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card border-primary">
+          <h2 class="card-header bg-primary text-white text-center">Admin</h2>
+          <article class="card-body">
+          <h4 class="card-title mb-4 mt-1 text-center">Login</h4>
+            <form [formGroup]="form" (ngSubmit)="login()">
+              <div class="form-group">
+                <!-- <strong><label>Username</label></strong> -->
+                  <input type="email" class="form-control" placeholder="Enter Your Username" formControlName="email">
+              </div>
+              <div class="form-group">
+                <!-- <strong><label>Password</label></strong> -->
+                  <input type="password" class="form-control" placeholder="Enter Your Password" formControlName="password">
+              </div>
+              <div class="form-group"> 
+              <div class="checkbox">
+                <label> <input type="checkbox"> Remember me</label>
+                <a class="float-right" href="#">Forgot password?</a>
+              </div>
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">Login</button>
+              </div> 
+              <!-- <div class="form-group text-center">
+                Not Registered? 
+                <a routerLink="signup">Sign Up Here</a>
+              </div>                                                     -->
+            </form>
+          </article>
+          </div> 
+      </div>
+    </div>
+  </div>
