@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HotelLayoutComponent } from './core/layout/hotel-layout/hotel-layout.component';
+// import { HotelLayoutComponent } from './core/layout/hotel-layout/hotel-layout.component';
+import { LayoutComponent } from './core/layout/layout.component';
 
 
 const routes: Routes = [
-
-  {path: "", loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)},
-
+  { 
+    path: "", 
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule) 
+  },
   {
     path: 'hotel',
-    component: HotelLayoutComponent,
+    // component: HotelLayoutComponent,
+    component: LayoutComponent,
     children: [
       {
         path: '',

@@ -1,0 +1,33 @@
+<button mat-button href="" class="mat-focus-indicator user-button" [matMenuTriggerFor]="userMenu">
+    <span class="mat-button-wrapper">
+        <img src="../../../assets/images/img_avatar.png" style="width:40px; border-radius: 50%;">
+        <h4 class="d-inline ml-2 ">{{user.name}} {{user.lastName}}</h4>
+        <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color">arrow_drop_down</mat-icon>
+    </span>
+    <span matripple class="mat-ripple mat-button-ripple"></span>
+    <span class="mat-button-focus-overlay"></span>
+</button>
+
+<!-- <button class="user-button" mat-mini-fab [matMenuTriggerFor]="userMenu">
+    <img src="../../../../../assets/images/img_avatar.png" alt="Avatar" style="width:40px; border-radius: 50%;">
+    <mat-icon class="user-button__icon">person</mat-icon>
+  </button> -->
+
+<mat-menu #userMenu="matMenu" xPosition="before">
+    <!-- <div class="user-menu-title">
+      <h4 class="user-menu-title__name">{{user.name}} {{user.lastName}}</h4>
+      <a class="user-menu-title__link" [href]="flatlogicEmail">Flatlogic.com</a>
+    </div> -->
+    <button mat-menu-item class="user-menu__item-title">
+        <mat-icon class="user-menu-icon">person</mat-icon>Show Profile
+    </button>
+    <button mat-menu-item class="user-menu__item-title">
+        <mat-icon class="user-menu-icon">lock</mat-icon>Change Password
+    </button>
+    <button mat-menu-item class="user-menu__item-title" (click)="signOutEmit()">
+        <mat-icon class="user-menu-icon">login</mat-icon>Sign out
+    </button>
+    <!-- <div class="sign-button-wrapper">
+      <button class="sign-button" mat-flat-button (click)="signOutEmit()">Sign out</button>
+    </div> -->
+</mat-menu>
