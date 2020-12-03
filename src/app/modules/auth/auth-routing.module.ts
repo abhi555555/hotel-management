@@ -6,9 +6,9 @@ import { SignFormComponent } from './sign-form/sign-form.component';
 
 
 const routes: Routes = [
-  {path:"", component:LoginFormComponent},
-  {path:"signup", component:SignFormComponent},
-  {path:"admin", component:AdminLoginFormComponent},
+  { path: "", component: LoginFormComponent },
+  { path: "signup", component: SignFormComponent },
+  { path: "admin", component: AdminLoginFormComponent }
 ];
 
 @NgModule({
